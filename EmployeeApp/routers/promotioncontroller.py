@@ -24,7 +24,6 @@ def promote_employee(
     - **Request Body:** Promotion details (`PromotionCreate` schema)  
     - **Response:** Created promotion record (`PromotionResponse` schema)  
     - **Status Code:** 201 Created  
-    - **Errors:** 400 Bad Request if promotion criteria are not met  
     """
     return promotionservice.promote_employee(db, promotion_data)
 
