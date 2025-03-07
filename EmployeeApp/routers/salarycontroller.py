@@ -57,7 +57,7 @@ def update_salary(
     **Update an employee's salary by applying an increment**  
     - **Requires Manager role**  
     - **Path Parameter:** `employee_id` (integer, must be greater than 0)  
-    - **Query Parameter:** `increment` (float, default is 0)  
+    - **Query Parameter:** `incrementt` (float, default is 0)  
     - **Response:** Updated salary record (`SalaryResponse` schema)  
     - **Status Code:** 200 OK  
     - **Errors:**  
