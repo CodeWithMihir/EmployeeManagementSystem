@@ -70,7 +70,7 @@ def require_admin(user: dict = Depends(get_current_user)):
 #check if user is manager or not
 def require_manager(user: dict = Depends(get_current_user)):
     if user["user_role"] != UserRole.manager.value:
-        raise HTTPException(status.HTTP_403_FORBIDDEN, detail="Admin access required")
+        raise HTTPException(status.HTTP_403_FORBIDDEN, detail="Manager access required")
     return user  # Return user details if they are an manager
 
 
@@ -86,7 +86,7 @@ async def create_user(userRequest: UserCreate, db: db_dependency):
     db.add(createUserModel)
     db.commit()
     db.refresh(createUserModel)
-    return createUserModel
+    return createUserModel.username
 
 @router.get("")
 async def GetAllUsersAsync(db: db_dependency):
